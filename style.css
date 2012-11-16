@@ -1,0 +1,136 @@
+body {
+	font-size: 12px;
+	font-family: Arial, serif;
+}
+
+.header {
+	font-size: 11px;
+	font-style: italic;
+	color: #818181;
+	margin-left: 10px;
+}
+
+.navPanel {
+	list-style: none;
+	padding: 0;
+	margin: 0 15px 0 0;
+	float: left;
+	color: #0077ad;
+}
+
+.navPanel li {
+	padding: 3px 6px 3px 10px;
+	margin-top: 10px;
+	border-radius: 8px 0 0 8px;
+	position: relative;
+}
+
+.navPanel span {
+	border-bottom: 1px dashed #0077ad;
+	cursor: pointer;
+}
+
+.navPanel .current {
+	background-color: #fff200;
+	color: #000;
+}
+
+.navPanel .current::after {
+	left:           100%;
+	content:        "";
+	height:         0;
+	width:          0;
+	position:       absolute;
+	pointer-events: none;
+	border: solid transparent;
+	border-left-color: #fff200;
+	border-width:      10px;
+	border-left-width: 13px;
+	top:               50%;
+	margin-top:        -10px;
+}
+
+.navPanel .current span {
+	border-bottom: none;
+	cursor: default;
+}
+
+#chartContainer {
+	float: left;
+	margin-left: 35px;
+}
+
+/*SVG*/
+
+.axisLine {
+	stroke-width: 1px;
+	stroke: #ccc;
+	shape-rendering: crispEdges;
+}
+
+.axis line {
+	stroke: #ccc;
+	fill: none;
+	shape-rendering: crispEdges;
+}
+
+.x.axis text {
+	fill: #9f9f9f;
+	text-anchor: middle;
+}
+
+.yLeft.axis text {
+	fill: #81d1f1;
+}
+
+.yLeft.axis line {
+	stroke: #81d1f1;
+	stroke-dasharray: 1;
+}
+
+.yRight.axis text {
+	fill: #9f9f9f;
+}
+
+path.line {
+	fill: none;
+	stroke-width: 3;
+}
+
+.spots circle {
+	fill: #fff;
+	stroke-width: 2;
+}
+
+.spots .hint {
+	stroke-width: 1;
+}
+
+.xValue {
+	font-weight: bold;
+	font-size: 12px !important;
+}
+
+.spots text {
+	font-family: Tahoma, serif;
+	font-size: 10px;
+	text-anchor: middle;
+}
+
+.verticalLine {
+	stroke-dasharray: 1;
+	stroke: #b2b2b2;
+	stroke-width: 1;
+	shape-rendering: crispEdges;
+}
+
+.verticalLines text {
+	text-anchor: middle;
+	fill: #000;
+	font-size: 10px;
+}
+
+.verticalLineBG {
+	stroke:       #fff;
+	stroke-width: 1;
+}
