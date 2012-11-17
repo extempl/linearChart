@@ -31,6 +31,10 @@ body {
 	display: inline-block;
 }
 
+.navPanel span:hover {
+	border-bottom-color: transparent;
+}
+
 .navPanel .current {
 	padding: 0;
 }
@@ -85,12 +89,7 @@ body {
 	text-anchor: middle;
 }
 
-.yLeft.axis text {
-	fill: #81d1f1;
-}
-
 .yLeft.axis line {
-	stroke: #81d1f1;
 	stroke-dasharray: 1;
 }
 
@@ -98,7 +97,7 @@ body {
 	fill: #9f9f9f;
 }
 
-path.line {
+path.mainLine {
 	fill: none;
 	stroke-width: 3;
 }
@@ -112,32 +111,42 @@ path.line {
 	stroke-width: 1;
 }
 
-.xValue {
+.spots .hintWhiteBG{
+	fill: #fff;
+	stroke: none;
+}
+
+.yValue {
 	font-weight: bold;
 	font-size: 13px !important;
 }
 
 .spots text {
+	stroke: none;
 	font-family: Tahoma, serif;
 	font-size: 11px;
 	text-anchor: middle;
 }
 
-.verticalLine {
+.vLine {
 	stroke-dasharray: 1;
 	stroke: #b2b2b2;
 	stroke-width: 1;
 	shape-rendering: crispEdges;
 }
 
-.verticalLines text {
+.vLines text {
 	font-weight: bold;
 	text-anchor: middle;
 	fill: #000;
 	font-size: 10px;
 }
 
-.verticalLineBG {
+.vLineBG {
 	stroke:       #fff;
 	stroke-width: 1;
+}
+
+.spots > g, .mainLine, .vLines > g {
+	display: none;
 }
