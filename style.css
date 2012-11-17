@@ -7,7 +7,7 @@ body {
 	font-size: 11px;
 	font-style: italic;
 	color: #818181;
-	margin-left: 10px;
+	margin: 41px 0 0 10px;
 }
 
 .navPanel {
@@ -21,21 +21,27 @@ body {
 .navPanel li {
 	padding: 3px 6px 3px 10px;
 	margin-top: 10px;
-	border-radius: 8px 0 0 8px;
-	position: relative;
 }
 
 .navPanel span {
+	border-radius: 8px 0 0 8px;
 	border-bottom: 1px dashed #0077ad;
 	cursor: pointer;
+	position: relative;
+	display: inline-block;
 }
 
 .navPanel .current {
+	padding: 0;
+}
+
+.navPanel .current span {
+	padding: 3px 6px 3px 10px;
 	background-color: #fff200;
 	color: #000;
 }
 
-.navPanel .current::after {
+.navPanel .current span::after {
 	left:           100%;
 	content:        "";
 	height:         0;
@@ -57,7 +63,7 @@ body {
 
 #chartContainer {
 	float: left;
-	margin-left: 35px;
+	margin: -41px 0 0 35px;
 }
 
 /*SVG*/
@@ -108,12 +114,12 @@ path.line {
 
 .xValue {
 	font-weight: bold;
-	font-size: 12px !important;
+	font-size: 13px !important;
 }
 
 .spots text {
 	font-family: Tahoma, serif;
-	font-size: 10px;
+	font-size: 11px;
 	text-anchor: middle;
 }
 
@@ -125,6 +131,7 @@ path.line {
 }
 
 .verticalLines text {
+	font-weight: bold;
 	text-anchor: middle;
 	fill: #000;
 	font-size: 10px;

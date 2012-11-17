@@ -9,130 +9,133 @@
 <ul class="navPanel">
     <li id="someid" class="current"><span>Профессиональный рост</span></li>
     <li id="someid2"><span>Соцпакет</span></li>
-    <li><span>Команда</span></li>
+    <li id="someid3"><span>Команда</span></li>
     <li><span>Планы на полгода</span></li>
     <li><span>Уровень зарплаты</span></li>
     <li><span>Компания как бренд</span></li>
     <li><span>Идеальный работодатель</span></li>
     <li><span>Рабочее место</span></li>
 </ul>
-<div id="chartContainer">
-    <svg width="600" height="455" xmlns="http://www.w3.org/2000/svg">
-        <g class="x axis" transform="translate(20,435)">
-            <g>
-                <line class="tick" x2="0" y2="4"></line>
-                <text x="0" dy="17">15</text>
-            </g>
-            <g transform="translate(78.57142857143,0)">
-                <line class="tick" x2="0" y2="4"></line>
-                <text x="0" dy="17">20</text>
-            </g>
-            <g transform="translate(157.14285714286,0)">
-                <line class="tick" x2="0" y2="4"></line>
-                <text x="0" dy="17">25</text>
-            </g>
-            <g transform="translate(235.71428571429,0)">
-                <line class="tick" x2="0" y2="4"></line>
-                <text x="0" dy="17">30</text>
-            </g>
-            <g transform="translate(314.28571428572,0)">
-                <line class="tick" x2="0" y2="4"></line>
-                <text x="0" dy="17">35</text>
-            </g>
-            <g transform="translate(392.85714285715005,0)">
-                <line class="tick" x2="0" y2="4"></line>
-                <text x="0" dy="17">40</text>
-            </g>
-            <g transform="translate(471.4285714285801,0)">
-                <line class="tick" x2="0" y2="4"></line>
-                <text x="0" dy="17">45</text>
-            </g>
-            <g transform="translate(550,0)">
-                <line class="tick" x2="0" y2="4"></line>
-                <text x="0" dy="17">50</text>
-            </g>
-            <path class="axisLine" d="M0,1 H550"></path>
-        </g>
-        <g class="yLeft axis" transform="translate(0,5)">
-            <g transform="translate(0,0)">
-                <line class="tick" x2="550" transform="translate(20,0)"></line>
-                <text y="4">3</text>
-            </g>
-            <g transform="translate(0,143.33333333333334)">
-                <line class="tick" x2="550" transform="translate(20,0)"></line>
-                <text y="4">2</text>
-            </g>
-            <g transform="translate(0,286.6666666666667)">
-                <line class="tick" x2="550" transform="translate(20,0)"></line>
-                <text y="4">1</text>
-            </g>
-        </g>
-        <g class="yRight axis" transform="translate(580,10)">
-            <text transform="translate(0,0)">100%</text>
-            <text transform="translate(0,86)">80</text>
-            <text transform="translate(0,172)">60</text>
-            <text transform="translate(0,258)">40</text>
-            <text transform="translate(0,344)">20</text>
-            <text transform="translate(0,430)">0</text>
-        </g>
-        <path class="line someid" d="M67,264 231,149 419,321" stroke="#5cd500" stroke-width="3" fill="none"></path>
-        <defs>
-            <linearGradient id="gradient_someid" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#fff" stop-opacity="0.1"></stop>
-                <stop offset="1" stop-color="#5cd500" stop-opacity="0.1"></stop>
-            </linearGradient>
-        </defs>
-        <g class="spots">
-            <g class="someid" transform="translate(67,264)">
-                <circle r="5" stroke="#5cd500"></circle>
-                <text class="xValue" transform="translate(0,-32)">1,2</text>
-                <text transform="translate(0,-18)">42%</text>
-                <path class="hint"
-                      d="M0,-10 -17,-17    H-18
-                         a 3,3 0 0,1 -3,-3 V-45
-                         a 3,3 0 0,1  3,-3 H 17
-                         a 3,3 0 0,1  3, 3 V-20
-                         a 3,3 0 0,1 -3, 3 H 16 z"
-                      stroke="#5cd500" fill="url(#gradient_someid)"></path><!--figure hint-->
-                <!--some label here-->
-                 <!--on vertical line bottom-->
-            </g>
-        </g>
-        <g class="verticalLines" transform="translate(0,435)">
-            <g class="someid" transform="translate(67,0)">
-                <path class="verticalLine" d="M0,0 V-160"></path>
-                <g transform="translate(0,-7)">
-                    <path class="verticalLineBG" d="M0,0 V-15"></path>
-                    <text y="-4">18</text>
+<div id="chartContainer"></div>
+
+<!--
+<svg width="615" height="510" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(20,60)">
+            <g class="x axis" transform="translate(0,430)">
+                <g>
+                    <line y2="4"></line>
+                    <text dy="17">15</text>
                 </g>
-           </g>
+                <g transform="translate(78.57142857143,0)">
+                    <line y2="4"></line>
+                    <text dy="17">20</text>
+                </g>
+                <g transform="translate(157.14285714286,0)">
+                    <line y2="4"></line>
+                    <text dy="17">25</text>
+                </g>
+                <g transform="translate(235.71428571429,0)">
+                    <line y2="4"></line>
+                    <text dy="17">30</text>
+                </g>
+                <g transform="translate(314.28571428572,0)">
+                    <line y2="4"></line>
+                    <text dy="17">35</text>
+                </g>
+                <g transform="translate(392.85714285715005,0)">
+                    <line y2="4"></line>
+                    <text dy="17">40</text>
+                </g>
+                <g transform="translate(471.4285714285801,0)">
+                    <line y2="4"></line>
+                    <text dy="17">45</text>
+                </g>
+                <g transform="translate(550,0)">
+                    <line y2="4"></line>
+                    <text dy="17">50</text>
+                </g>
+                <path class="axisLine" d="M0,1 H550"></path>
+            </g>
+            <g class="yLeft axis">
+                <g>
+                    <line x2="550"></line>
+                    <text y="4" x="-20">3</text>
+                </g>
+                <g transform="translate(0,143.33333333333334)">
+                    <line x2="550"></line>
+                    <text y="4" x="-20">2</text>
+                </g>
+                <g transform="translate(0,286.6666666666667)">
+                    <line x2="550"></line>
+                    <text y="4" x="-20">1</text>
+                </g>
+            </g>
+            <g class="yRight axis" transform="translate(560,5)">
+                <text transform="translate(0,0)">100%</text>
+                <text transform="translate(0,86)">80</text>
+                <text transform="translate(0,172)">60</text>
+                <text transform="translate(0,258)">40</text>
+                <text transform="translate(0,344)">20</text>
+                <text transform="translate(0,430)">0</text>
+            </g>
+            <path class="line someid" d="M47,259 211,144 399,316" stroke="#5cd500" stroke-width="3" fill="none"></path>
+            <defs>
+                <linearGradient id="gradient_someid" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#fff" stop-opacity="0.1"></stop>
+                    <stop offset="1" stop-color="#5cd500" stop-opacity="0.1"></stop>
+                </linearGradient>
+            </defs>
+            <g class="spots">
+                <g class="someid" transform="translate(47,259)">
+                    <circle r="5" stroke="#5cd500"></circle>
+                    <text class="xValue" transform="translate(0,-35)">1,2</text>
+                    <text transform="translate(0,-21)">42%</text>
+                    <path class="hint"
+                          d="M0,-10 l-19,-10   h -1
+                             a 3,3 0 0,1 -3,-3 v-28
+                             a 3,3 0 0,1  3,-3 h 40
+                             a 3,3 0 0,1  3, 3 v 28
+                             a 3,3 0 0,1 -3, 3 h -1 z"
+                          stroke="#5cd500" fill="url(#gradient_someid)"></path>
+</g>
+</g>
+<g class="verticalLines" transform="translate(0,430)">
+    <g class="someid" transform="translate(47,0)">
+        <path class="verticalLine" d="M0,0 V-160"></path>
+        <g transform="translate(0,-7)">
+            <path class="verticalLineBG" d="M0,0 V-15"></path>
+            <text y="-4">18</text>
         </g>
-    </svg>
-</div>
+    </g>
+</g>
+</g>
+</svg>
+-->
 <!-- 550 430 -->
 <script>
+    (function () {
     var config = {
         width:  550, //ширина графика
         height: 430, //высота. Если их изменить то все отрисуется правильно.
         middleLineColor: "rgb(133,205,250)",
         axisX:  {
-            max: 50,
-            points: [15, 20, 25, 30, 35, 40, 45, 50],
-            min: 15
+//            max: 50,
+            points: [15, 20, 25, 30, 35, 40, 45, 50]//, why not simply min-max-step?
+//            min: 15
 
         },
         axisY:  {
             max:     3,
             min:     0,
-            middle:  2.2,
+//            middle:  2.2, wtf?
             points:  [0, 1, 2, 3],
             points2: [
-                {val: 0, lbl: "<i class='tick first'></i>0"},
-                {val: 0.6, lbl: "<i class='tick'></i>20"},
-                {val: 1.2, lbl: "<i class='tick'></i>40"},
-                {val: 1.8, lbl: "<i class='tick'></i>60"},
-                {val: 2.4, lbl: "<i class='tick'></i>80"},
-                {val: 3, lbl: "<i class='tick last'></i>100%"}
+                {val: 0, lbl: "0"},
+                {val: 0.6, lbl: "20"},
+                {val: 1.2, lbl: "40"},
+                {val: 1.8, lbl: "60"},
+                {val: 2.4, lbl: "80"},
+                {val: 3, lbl: "100%"}
             ]
         },
 
@@ -169,6 +172,7 @@
         ]
     };
     var chart = new linearChart('#chartContainer', config);
+    })();
 </script>
 </body>
 </html>
