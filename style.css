@@ -31,7 +31,7 @@ body {
 	display: inline-block;
 }
 
-.navPanel span:hover {
+.navPanel span:hover, .navPanel .current span {
 	border-bottom-color: transparent;
 }
 
@@ -58,7 +58,6 @@ body {
 }
 
 .navPanel .current span {
-	border-bottom: none;
 	cursor: default;
 }
 
