@@ -19,7 +19,7 @@ var linearChart = function (container, config) {
 };
 
 linearChart.prototype = {
-    svgNS: 'http://www.w3.org/2000/svg',
+	svgNS: 'http://www.w3.org/2000/svg',
 	init: function () {
 		this.createSVGContainer();
 		this.initAxisX();
