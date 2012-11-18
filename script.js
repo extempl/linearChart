@@ -76,7 +76,7 @@ var linearChart = function (container, config) {
 	axisYLeftEl.classList.add('yLeft');
 
 	axisYLeftLine = document.createElementNS(svgNS, 'line');
-	axisYLeftLine.setAttribute('x2', 550);
+	axisYLeftLine.setAttribute('x2', config.width);
 	axisYLeftLine.style.stroke = config.middleLineColor;
 
 	axisYLeftText = document.createElementNS(svgNS, 'text');
