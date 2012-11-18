@@ -68,7 +68,7 @@ linearChart.prototype = {
 		axisXLine.setAttribute('d', 'M0,1 H' + this.config.width);
 
 		x = 0;
-		for (i = 0; i <= axisXLength; i++) { // TODO maybe set function init x tick
+		for (i = 0; i <= axisXLength; i++) {
 			axisXTickText = axisXTickText.cloneNode();
 			axisXTickText.textContent = points[i];
 
@@ -106,7 +106,7 @@ linearChart.prototype = {
 		axisYLeftText.setAttribute('x', -20);
 		axisYLeftText.style.fill = this.config.middleLineColor;
 
-		for (i = axisYLeftLength; i > 0; i--) { // TODO
+		for (i = axisYLeftLength; i > 0; i--) {
 			axisYLeftTick = document.createElementNS(this.svgNS, 'g');
 			axisYLeftTick.setAttribute('transform', 'translate(0,' + (this.config.height - points[i] * this.stepY) + ')');
 
@@ -242,7 +242,6 @@ linearChart.prototype = {
 			currentMainLine = this.mainLine.cloneNode(),
 			currentLinearGradient = this.linearGradient.cloneNode(true),
 			lineCoords = 'M',
-			currentSpot, currentVLine,
 			styleEl = this.containerEl.querySelector('style');
 
 		currentMainLine.style.stroke = chartConfig.color;
@@ -255,30 +254,9 @@ linearChart.prototype = {
 		currentLinearGradient.setAttribute('id', chartConfig.id + '_gradient');
 		this.defs.appendChild(currentLinearGradient);
 
-		// iterate
-		for (j = 0, k = chartConfig.points.length; j < k; j++) {
-			x = this.singleStepX * (chartConfig.points[j].x - this.config.axisX.points[0]);
-			y = this.config.height - this.stepY * chartConfig.points[j].y;
+		for (j = 0, k = chartConfig.points.length; j < k; j++)
+			lineCoords += this.generateSpot(chartConfig, j);
 
-			lineCoords += x + ',' + y + ' ';
-
-			currentSpot = this.spot.cloneNode(true);
-			currentSpot.classList.add(chartConfig.id);
-			currentSpot.setAttribute('transform', 'translate(' + x + ',' + y + ')');
-			currentSpot.style.stroke = chartConfig.color;
-			currentSpot.querySelector('.hint').style.fill = 'url(#' + chartConfig.id + '_gradient)';
-			currentSpot.querySelector('.yValue').textContent = chartConfig.points[j].y;
-			currentSpot.querySelector('.percentageValue').textContent = chartConfig.points[j].percent + '%';
-			this.spotsEl.appendChild(currentSpot);
-			//label here
-
-			currentVLine = this.vLineEl.cloneNode(true);
-			currentVLine.classList.add(chartConfig.id);
-			currentVLine.setAttribute('transform', 'translate(' + x + ',0)');
-			currentVLine.querySelector('.vLine').setAttribute('d', 'M0,0 V-' + (this.config.height - y - 10));
-			currentVLine.querySelector('text').textContent = chartConfig.points[j].x;
-			this.vLines.appendChild(currentVLine);
-		}
 		currentMainLine.setAttribute('d', lineCoords);
 
 		if (!styleEl) {
@@ -289,6 +267,33 @@ linearChart.prototype = {
 
 		if (chartConfig.selected)
 			this.selectChart(chartConfig.id);
+	},
+	generateSpot: function (chartConfig, point) {
+		point = chartConfig.points[point];
+		var x, y, currentSpot, currentVLine;
+		x = this.singleStepX * (point.x - this.config.axisX.points[0]);
+		y = this.config.height - this.stepY * point.y;
+
+		currentSpot = this.spot.cloneNode(true);
+		currentSpot.classList.add(chartConfig.id);
+		currentSpot.setAttribute('transform', 'translate(' + x + ',' + y + ')');
+		currentSpot.style.stroke = chartConfig.color;
+		currentSpot.querySelector('.hint').style.fill = 'url(#' + chartConfig.id + '_gradient)';
+		currentSpot.querySelector('.yValue').textContent = point.y;
+		currentSpot.querySelector('.percentageValue').textContent = point.percent + '%';
+
+		this.spotsEl.appendChild(currentSpot);
+		//label here
+
+		currentVLine = this.vLineEl.cloneNode(true);
+		currentVLine.classList.add(chartConfig.id);
+		currentVLine.setAttribute('transform', 'translate(' + x + ',0)');
+		currentVLine.querySelector('.vLine').setAttribute('d', 'M0,0 V-' + (this.config.height - y - 10));
+		currentVLine.querySelector('text').textContent = point.x;
+
+		this.vLines.appendChild(currentVLine);
+
+		return x + ',' + y + ' ';
 	},
 	selectChart: function (id) {
 		id = id || 'none';
