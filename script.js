@@ -89,8 +89,8 @@ linearChart.prototype = {
 			points = this.config.axisY.points,
 			axisLength = points.length - 1,
 			el = document.createElementNS(this.svgNS, 'g'),
-			tickLine = document.createElementNS(this.svgNS, 'tickLine'),
-			tickText = document.createElementNS(this.svgNS, 'tickText'),
+			tickLine = document.createElementNS(this.svgNS, 'line'),
+			tickText = document.createElementNS(this.svgNS, 'text'),
 			tick;
 
 		this.stepY = this.config.height / axisLength;
