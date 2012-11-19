@@ -50,7 +50,7 @@ linearChart.prototype = {
 			stepX = this.config.width / axisLength,
 			el = document.createElementNS(this.svgNS, 'g'),
 			tickText = document.createElementNS(this.svgNS, 'text'),
-			tickLine = document.createElementNS(this.svgNS, 'axisLine'),
+			tickLine = document.createElementNS(this.svgNS, 'line'),
 			axisLine = document.createElementNS(this.svgNS, 'path'),
 			tick;
 
@@ -126,7 +126,7 @@ linearChart.prototype = {
 
 		el.classList.add('axis');
 		el.classList.add('yRight');
-		el.setAttribute('transform', 'translate(' + (this.config.width + 10) + ',5)');
+		el.setAttribute('transform', 'translate(' + (this.config.width + 5) + ',5)');
 
 		for (i = axisLength; i > 0; i--) {
 			point = this.config.axisY.points2[i - 1];
